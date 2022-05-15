@@ -1,0 +1,223 @@
+import 'package:flutter/material.dart';
+
+const Color white = Color.fromARGB(255, 18, 32, 47);
+
+BoxDecoration myDecoration (Color color, 
+                            double radius, 
+                            String link,
+                           ) {
+ 
+  return BoxDecoration(
+          image: DecorationImage(
+        image: NetworkImage(link),
+      ),
+          color: color,
+          borderRadius: const BorderRadius.all(
+           Radius.circular(20),
+              
+      ));
+      
+
+}
+
+const double altura = 50;
+const double largura = 50;
+
+Row myRow () {
+      return   Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Container(
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20),
+                    ),
+                  ),
+                  height: 90,
+                  width: 90,
+                ),
+                Container(
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20),
+                    ),
+                  ),
+                  height: 90,
+                  width: 90,
+                ),
+                Container(
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20),
+                    ),
+                  ),
+                  height: 90,
+                  width: 90,
+                ),
+                Container(
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20),
+                    ),
+                  ),
+                  height: 90,
+                  width: 90,
+                ),
+                Container(
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20),
+                    ),
+                  ),
+                  height: 90,
+                  width: 90,
+                ),
+              ]);
+          
+        }
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: white,
+      ),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: Center(
+          child: MyWidget(),
+        ),
+      ),
+    );
+  }
+}
+
+class MyWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+      Container(
+        height: 90,
+        width: 300,
+        decoration: myDecoration(Colors.green, 9.0, ('https://i.imgur.com/PNeDoYF.png')),
+      ),
+        myRow (),
+      const SizedBox(
+        width: 20,
+        height: 20,
+      ),
+      Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: <Widget>[
+        Container(
+          height: 90,
+          width: 90,
+          decoration: myDecoration(Colors.green, 9.0, 'https://i.imgur.com/PNeDoYF.png'),
+        ),
+        Container(
+          
+          height: 90,
+          width: 90,
+          decoration: myDecoration(Colors.green, 9.0, 'https://i.imgur.com/TaVgOyP.png'),
+        ),
+      ]),
+      const SizedBox(
+        width: 20,
+        height: 20,
+      ),
+      Container(
+        height: 90,
+        width: 300,
+        decoration: myDecoration(Colors.green, 9.0, 'https://i.imgur.com/aAefopo.jpeg'),
+      ),
+      const SizedBox(
+        width: 20,
+        height: 20,
+      ),
+      Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: <Widget>[
+        Container(
+          height: 90,
+          width: 90,
+          decoration: myDecoration(Colors.green, 9.0, 'https://i.imgur.com/aAefopo.jpeg'),
+          ),
+        Container(
+          height: 90,
+          width: 90,
+          decoration: myDecoration(Colors.green, 9.0, 'https://i.imgur.com/aAefopo.jpeg'),
+        ),
+        Container(
+          height: 90,
+          width: 90,
+          decoration:  myDecoration(Colors.green, 9.0, 'https://i.imgur.com/aAefopo.jpeg'),
+        ),
+        Container(
+          decoration: myDecoration(Colors.green, 9.0, 'https://i.imgur.com/aAefopo.jpeg'),
+          height: altura,
+          width: largura,
+        ),
+      ]),
+      const SizedBox(
+        height: 30,
+      ),
+      Container(
+        decoration: myDecoration(Colors.green, 9.0, 'https://i.imgur.com/aAefopo.jpeg'),
+                  height: 250,
+        width: 350,
+        child: Column(children: [
+          const SizedBox(
+            height: 20,
+          ),
+          Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Container(
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20),
+                    ),
+                  ),
+                  height: 90,
+                  width: 90,
+                ),
+                Container(
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20),
+                    ),
+                  ),
+                  height: 90,
+                  width: 90,
+                ),
+              ]),
+          const SizedBox(
+            height: 20,
+          ),
+          Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Container(
+                  decoration: myDecoration(Colors.green, 9.0, 'https://i.imgur.com/aAefopo.jpeg'),
+                  height: 90,
+                  width: 90,
+                ),
+                Container(
+                  decoration: myDecoration(Colors.green, 9.0, 'https://i.imgur.com/aAefopo.jpeg'),
+                  height: 90,
+                  width: 90,
+                ),
+              ]),
+        ]),
+      ),
+    ]);
+  }
+}

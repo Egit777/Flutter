@@ -1,0 +1,134 @@
+import 'package:flutter/material.dart';
+
+class MyCard extends StatefulWidget {
+  const MyCard({Key? key}) : super(key: key);
+
+  @override
+  State<MyCard> createState() => _MyCardState();
+}
+
+class _MyCardState extends State<MyCard> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.all(5),
+      padding: EdgeInsets.all(5),
+      height: 200,
+      width: 450,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: Color.fromARGB(255, 0, 0, 0),
+      ),
+      child: Column(children: [
+        Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+          Container(
+            height: 80,
+            width: 80,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: NetworkImage(
+                      'https://s2.glbimg.com/rKq2WZ6FCFPCXmugfhDiFGAHikU=/e.glbimg.com/og/ed/f/original/2021/11/30/giphy_6.gif')),
+            ),
+          ),
+          const SizedBox(width: 25),
+          Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: const [
+                Text('Nome:',
+                    style: TextStyle(
+                      fontSize: 15,
+                    )),
+                Text('Tel:',
+                    style: TextStyle(
+                      fontSize: 15,
+                    )),
+                Text('Email:',
+                    style: TextStyle(
+                      fontSize: 15,
+                    )),
+              ]),
+        ]),
+        const SizedBox(height: 70),
+        Divider(
+          color: Colors.white,
+        ),
+        const SizedBox(width: 10),
+        Column(//mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+          Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+            Container(
+              height: 20,
+              width: 30,
+              child: const Icon(
+                Icons.favorite,
+                color: Color.fromARGB(255, 137, 122, 121),
+                size: 20,
+              ),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                color: Colors.white,
+              ),
+            ),
+            Container(
+              height: 20,
+              width: 30,
+              child: const Icon(
+                Icons.article,
+                color: Colors.red,
+                size: 20,
+              ),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.white,
+              ),
+            ),
+            Container(
+              height: 20,
+              width: 30,
+              child: const Icon(
+                Icons.person,
+                color: Color.fromARGB(255, 83, 9, 203),
+                size: 20,
+              ),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.white,
+              ),
+            ),
+            Container(
+              height: 20,
+              width: 30,
+              child: const Icon(
+                Icons.book,
+                color: Color.fromARGB(255, 0, 0, 0),
+                size: 20,
+              ),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Color.fromARGB(255, 255, 255, 255),
+              ),
+            ),
+            // Container(
+            //   height: 20,
+            //  width: 100,
+            //   decoration: BoxDecoration(
+            //    borderRadius: BorderRadius.circular(10),
+            //   color: Colors.white,
+            //),
+            // child: TextButton(
+            // style: TextButton.styleFrom(
+            // primary: Colors.black,
+            //),
+            //onPressed: () {},
+            //child: const Text('>',
+            //  style: TextStyle(
+            //-  fontSize: 20,
+            // )),
+            //  )),
+          ]),
+        ]),
+      ]),
+    );
+  }
+}
